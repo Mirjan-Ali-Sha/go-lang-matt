@@ -5,7 +5,12 @@ export default defineConfig({
   description: "A Complete Class by Matt Holiday",
   base: "/go-lang-matt/", // Base URL for GitHub Pages repository (assuming repository name is 'go-lang-matt')
   
+  head: [
+    ['link', { rel: 'icon', href: '/go-lang-matt/favicon.ico' }]
+  ],
+
   themeConfig: {
+    logo: '/logo.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Preface', link: '/preface' },
