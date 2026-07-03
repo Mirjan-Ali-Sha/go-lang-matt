@@ -1,0 +1,47 @@
+/* Custom CSS for Go Book static site */
+
+.slide-visualization-box {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+}
+
+.slide-visualization-box summary {
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  color: var(--vp-c-brand-1);
+}
+
+.slide-visualization-box summary:hover {
+  color: var(--vp-c-brand-2);
+}
+
+.slide-iframe-container {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Hide when printing */
+@media print {
+  .no-print,
+  .slide-visualization-box,
+  .VPNavbar,
+  .VPSidebar,
+  .VPFooter,
+  .VPLocalNav,
+  .print-button,
+  .vp-doc-footer,
+  .prev-next {
+    display: none !important;
+  }
+
+  .VPContent {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+    color: black !important;
+  }
+}
