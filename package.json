@@ -1,0 +1,14 @@
+{
+  "name": "go-programming-book",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Programming in Go — A Complete Class by Matt Holiday",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0"
+  }
+}
