@@ -158,7 +158,7 @@ for filename, part_folder in source_files:
                 else:
                     clean_path = "/slides/" + path
                     
-                iframe_src = "/go-lang-matt" + clean_path
+                iframe_src = ".." + clean_path
                 
                 box_html = f"""<div class="slide-visualization-box no-print">
   <details>
