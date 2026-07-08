@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: Programming in Go
-  text: A Complete Class by Matt Holiday
-  tagline: A comprehensive Go programming book adapted from Matt Holiday's 44-class video lecture series.
+  text: Matt Holiday & Nic Jackson Lectures
+  tagline: A comprehensive Go programming book compiled from Matt Holiday's Go Class and Nic Jackson's Building Microservices series.
   actions:
     - theme: brand
       text: Start Reading
@@ -25,7 +25,10 @@ features:
     details: Covers CSP, channels, select, context, and conventional sync packages.
   - icon: ⚙️
     title: Tooling & Optimization
-    details: Benchmarking, pprof profiling, error wrapping, modules, and Docker.
+    details: Benchmarking, profiling, dependency management, and packaging.
+  - icon: 🌐
+    title: Building Microservices
+    details: RESTful APIs, Gorilla Toolkit, Swagger, gRPC, and bidirectional streaming.
 ---
 
 ## Table of Contents {#table-of-contents}
@@ -115,6 +118,38 @@ features:
 ### [Part VII — The Future & Wisdom](/part-7/intro)
 - [Chapter 42: Generics](/part-7/ch42-parametric-polymorphism-generics)
 - [Chapter 43: Parting Thoughts](/part-7/ch43-parting-thoughts-software-philosophy)
+
+</div>
+
+<div class="toc-column">
+
+### [Part VIII — Building Microservices](/part-8/intro)
+- [Chapter 44: Intro to Microservices](/part-8/ch44-introduction-to-microservices)
+- [Chapter 45: Structuring Code](/part-8/ch45-structuring-microservice-code)
+- [Chapter 46: RESTful Services](/part-8/ch46-restful-services)
+- [Chapter 47: Reading & Writing JSON](/part-8/ch47-restful-services-reading-and-writing-json)
+- [Chapter 48: The Gorilla Framework](/part-8/ch48-the-gorilla-framework)
+- [Chapter 49: JSON Validation](/part-8/ch49-json-validation)
+- [Chapter 50: Swagger Documentation](/part-8/ch50-documenting-restful-apis-with-swagger)
+- [Chapter 51: Auto-Generating Clients](/part-8/ch51-auto-generating-http-clients-from-swagger)
+- [Chapter 52: CORS](/part-8/ch52-cors-cross-origin-resource-sharing)
+- [Chapter 53: Standard Lib Files](/part-8/ch53-handling-files-with-the-go-standard-library)
+- [Chapter 54: HTTP Multi-Part Requests](/part-8/ch54-http-multi-part-requests)
+- [Chapter 55: Gzip Compression](/part-8/ch55-gzip-compression-for-http-responses)
+- [Chapter 56: gRPC & Protocol Buffers](/part-8/ch56-introduction-to-grpc-and-protocol-buffers)
+- [Chapter 57: gRPC Client Connections](/part-8/ch57-grpc-client-connections)
+- [Chapter 58: Refactoring Codebase](/part-8/ch58-refactoring-the-codebase)
+- [Chapter 59: gRPC Streaming (Part 1)](/part-8/ch59-grpc-bi-directional-streaming-part-1)
+- [Chapter 60: gRPC Streaming (Part 2)](/part-8/ch60-grpc-bi-directional-streaming-part-2)
+- [Chapter 61: gRPC Error Messages](/part-8/ch61-grpc-error-messages-in-unary-rpcs)
+- [Chapter 62: gRPC Stream Error Handling](/part-8/ch62-grpc-error-handling-in-bidirectional-streams)
+
+</div>
+
+<div class="toc-column">
+
+### [Part IX — Go Build & Tooling](/part-9/intro)
+- [Chapter 63: Go Build, Compile & Package](/part-9/ch63-go-build-compilation-and-packaging)
 
 </div>
 
