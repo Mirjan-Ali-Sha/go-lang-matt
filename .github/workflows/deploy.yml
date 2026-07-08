@@ -24,7 +24,6 @@ jobs:
         run: |
           python split_book.py
           python update_intros.py
-          python add_print_styles.py
           python copy_slides.py
 
       - name: Setup Node.js
