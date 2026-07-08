@@ -52,6 +52,35 @@ aside: false
 
 # Programming in Go — A Complete Class by Matt Holiday
 
+# Declaration & Disclaimer
+
+::: warning Disclaimer: Read at Your Own Risk
+This project is an unofficial companion guide and transcription of the Go programming lectures. While every effort has been made to ensure accuracy, the code examples and explanations are provided "as-is." Please read, test, and use the contents of this book at your own risk and discretion.
+:::
+
+## Project Purpose
+This book is a comprehensive, written conversion of the excellent **Programming in Go** lecture series taught by **Matt Holiday**. 
+
+The entire curriculum has been faithfully transcribed, restructured, and formatted by **Mirjan Ali Sha** to serve as an accessible, searchable, and readable companion textbook.
+
+---
+
+## Verification & Official Materials
+To ensure absolute accuracy and to let you experience the lectures in their original, complete form, the following official materials are integrated directly into every chapter of this book:
+
+*   🎥 **Lecture Videos**: Embedded YouTube video players for Matt Holiday's original class recordings are included at the top of each chapter.
+*   📊 **Slide References**: Interactive PDF slide viewers pointing to the official slides are provided for each lesson.
+
+We **highly encourage and recommend** that you watch the videos and verify the concepts with the official slides to get the most out of this course.
+
+---
+
+## Credits
+*   **Lecturer**: Matt Holiday
+*   **Editor & Transcriber**: Mirjan Ali Sha
+
+---
+
 # Preface
 
 Welcome to this book on programming in Go. My name is Matt Holiday, and in this class I'm going to teach you Go from the beginning. I don't assume you know anything about Go, but I do assume you know things like if statements, for loops, and function calls.
@@ -1014,12 +1043,6 @@ fmt.Fprintln(f, "Hello, file!")
 ### Standard Streams
 
 Go provides `os.Stdin`, `os.Stdout`, and `os.Stderr`. It's good style in a command-line program to print errors to `os.Stderr`, which might be going to a different place than normal output.
-
----
-
-# Part II — Language Fundamentals (Continued)
-
----
 
 ---
 
@@ -3207,12 +3230,6 @@ In this pattern, the capacity of the buffered channel acts as the maximum concur
 
 ---
 
-# Part V Continued — Concurrency & Language Details
-
----
-
----
-
 ## Chapter 27: Exercise — Concurrent File Processing
 
 In this chapter, we take a sequential program and refactor it into a high-performance concurrent application using the CSP (Communicating Sequential Processes) model.
@@ -5112,12 +5129,6 @@ func main() {
 }
 ```
 *Linter output:* `[govet] printf: Printf format %s has arg count of wrong type int`
-
----
-
-# Part VI — Continued: Testing & Distribution
-
----
 
 ---
 
