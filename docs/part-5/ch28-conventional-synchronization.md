@@ -4,7 +4,7 @@
   <details>
     <summary>📊 Slide Reference: <code>/slides/go-28-mutex-slides.pdf</code></summary>
     <div class="slide-iframe-container">
-      <iframe src="/GO-Lang-Matt/slides/go-28-mutex-slides.pdf" width="100%" height="450px" style="border: none;"></iframe>
+      <iframe src="../slides/go-28-mutex-slides.pdf" width="100%" height="450px" style="border: none;"></iframe>
     </div>
   </details>
 </div>

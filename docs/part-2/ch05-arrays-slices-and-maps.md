@@ -4,7 +4,7 @@
   <details>
     <summary>📊 Slide Reference: <code>/slides/go-05-complex-slides.pdf</code></summary>
     <div class="slide-iframe-container">
-      <iframe src="/GO-Lang-Matt/slides/go-05-complex-slides.pdf" width="100%" height="450px" style="border: none;"></iframe>
+      <iframe src="../slides/go-05-complex-slides.pdf" width="100%" height="450px" style="border: none;"></iframe>
     </div>
   </details>
 </div>
