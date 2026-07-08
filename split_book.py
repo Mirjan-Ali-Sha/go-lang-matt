@@ -105,7 +105,8 @@ for filename, part_folder in source_files:
     file_intro = parts[0].strip()
     
     # Handle the file introduction
-    if file_intro:
+    is_continued = "continued" in filename.lower()
+    if file_intro and not is_continued:
         if part_folder == "preface":
             os.makedirs(dest_dir, exist_ok=True)
             with open(os.path.join(dest_dir, "preface.md"), "w", encoding="utf-8") as f_out:
@@ -116,9 +117,8 @@ for filename, part_folder in source_files:
             os.makedirs(part_path, exist_ok=True)
             
             intro_file = os.path.join(part_path, "intro.md")
-            if not os.path.exists(intro_file) or "# Part" in file_intro:
-                with open(intro_file, "w", encoding="utf-8") as f_out:
-                    f_out.write(file_intro + "\n")
+            with open(intro_file, "w", encoding="utf-8") as f_out:
+                f_out.write(file_intro + "\n")
             full_book_content.append(re.sub(slide_regex, "", file_intro))
 
     # Now process the chapter blocks
@@ -191,8 +191,75 @@ for filename, part_folder in source_files:
         full_book_content.append(full_chapter_content_for_full_book)
 
 # Write the full book markdown for PDF printing (without slide or video boxes)
+print_setup = """---
+layout: doc
+aside: false
+---
+
+<button onclick="window.print()" class="print-button">📄 Print / Save as PDF</button>
+
+<style>
+@media print {
+  /* Hide standard VitePress navigation elements when printing */
+  .VPNavbar,
+  .VPSidebar,
+  .VPFooter,
+  .VPLocalNav,
+  .print-button,
+  .vp-doc-footer,
+  .prev-next {
+    display: none !important;
+  }
+  
+  .VPContent {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+    color: black !important;
+  }
+  
+  /* Ensure page breaks before chapters */
+  h1, h2 {
+    page-break-before: always;
+  }
+}
+
+.print-button {
+  background-color: var(--vp-c-brand-1);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  transition: background-color 0.2s;
+  display: inline-block;
+}
+
+.print-button:hover {
+  background-color: var(--vp-c-brand-2);
+}
+</style>
+
+"""
+
 with open(os.path.join(dest_dir, "full-book.md"), "w", encoding="utf-8") as f_full:
+    f_full.write(print_setup)
     f_full.write("# Programming in Go — A Complete Class by Matt Holiday\n\n")
+    
+    # Prepend Declaration if it exists
+    decl_path = os.path.join(dest_dir, "declaration.md")
+    if os.path.exists(decl_path):
+        with open(decl_path, "r", encoding="utf-8") as f_decl:
+            decl_content = f_decl.read().strip()
+            if decl_content.startswith("---"):
+                parts_decl = decl_content.split("---", 2)
+                if len(parts_decl) >= 3:
+                    decl_content = parts_decl[2].strip()
+            f_full.write(decl_content + "\n\n---\n\n")
+            
     f_full.write("\n\n---\n\n".join(full_book_content))
 
 print("Restructuring completed successfully!")
