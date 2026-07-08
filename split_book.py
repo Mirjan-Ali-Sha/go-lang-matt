@@ -22,10 +22,12 @@ source_files = [
     ("08-part6-advanced.md", "part-6"),
     ("09-part6-continued.md", "part-6"),
     ("10-part7-future.md", "part-7"),
-    ("11-appendices.md", "appendices")
+    ("11-appendices.md", "appendices"),
+    ("12-part8-microservices.md", "part-8"),
+    ("13-part9-tooling.md", "part-9")
 ]
 
-# Video ID mapping for all 44 chapters (Go Class 00 to 43)
+# Video ID mapping for all 63 chapters
 video_mapping = {
     "00": "iDQAZEJK8lI",
     "01": "A9HfEhvpOEY",
@@ -70,7 +72,26 @@ video_mapping = {
     "40": "_N6BxmbLYBk",
     "41": "rXgUP_BNyaI",
     "42": "Si0rAE8yT9g",
-    "43": "i7wbTq-beQo"
+    "43": "i7wbTq-beQo",
+    "44": "VzBGi_n65iU",
+    "45": "hodOppKJm5Y",
+    "46": "eBeqtmrvVpg",
+    "47": "UZbHLVsjpF0",
+    "48": "DD3JlT_u0DM",
+    "49": "gE8_-8KoOLc",
+    "50": "07XhTqE-j8k",
+    "51": "Zn4joNjqBFc",
+    "52": "RlYoy_RiYPw",
+    "53": "ctmhYJpGsgU",
+    "54": "_7-IhHMptNo",
+    "55": "GtSg1H7SU5Y",
+    "56": "pMgty_RYIOc",
+    "57": "oTBcd5J0VYU",
+    "58": "Vl88R9acq-Y",
+    "59": "4ohwkWVgEZM",
+    "60": "MT5tXSKa-KY",
+    "61": "9QS33m8vnag",
+    "62": "IT4OfN27D4c"
 }
 
 # Map to slugify titles for filenames
@@ -177,7 +198,16 @@ for filename, part_folder in source_files:
                 return box_html
             return replace_slide_ref
 
+        # Create a replacement function for Lecture Video links
+        def make_replace_video_ref(ch_num_str):
+            def replace_video_ref(match):
+                vid_id = match.group(1)
+                return f'<VideoPlayer videoId="{vid_id}" chapter="{ch_num_str}" />'
+            return replace_video_ref
+
         body_for_chapter = re.sub(slide_regex, make_replace_slide_ref(ch_padded), body)
+        video_regex = r'> 🎥 \*\*Lecture Video:\*\*\s+\[Watch on YouTube\]\(https://(?:www\.youtube\.com/watch\?v=|youtu\.be/)([^)\s]+)\)'
+        body_for_chapter = re.sub(video_regex, make_replace_video_ref(ch_padded), body_for_chapter)
         full_chapter_content_for_chapter = f"{header}\n\n{body_for_chapter}"
         
         with open(os.path.join(part_path, filename_out), "w", encoding="utf-8") as f_out:
@@ -247,7 +277,7 @@ aside: false
 
 with open(os.path.join(dest_dir, "full-book.md"), "w", encoding="utf-8") as f_full:
     f_full.write(print_setup)
-    f_full.write("# Programming in Go — A Complete Class by Matt Holiday\n\n")
+    f_full.write("# Programming in Go\n\n")
     
     # Prepend Declaration if it exists
     decl_path = os.path.join(dest_dir, "declaration.md")
