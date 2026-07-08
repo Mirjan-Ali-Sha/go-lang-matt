@@ -13,6 +13,7 @@ export default defineConfig({
     logo: '/logo.png',
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Declaration', link: '/declaration' },
       { text: 'Preface', link: '/preface' },
       { text: 'Printable Book (PDF)', link: '/full-book' },
       { text: 'Appendices', link: '/appendices/intro' }
@@ -26,6 +27,7 @@ export default defineConfig({
       {
         text: 'Front Matter',
         items: [
+          { text: 'Declaration', link: '/declaration' },
           { text: 'Preface', link: '/preface' }
         ]
       },
