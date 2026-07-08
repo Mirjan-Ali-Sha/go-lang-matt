@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: "Programming in Go",
-  description: "A Complete Class by Matt Holiday",
+  description: "Go Programming — Matt Holiday's Class & Nic Jackson's Microservices Series",
   base: "/go-lang-matt/", // Base URL for GitHub Pages repository (assuming repository name is 'go-lang-matt')
   
   head: [
@@ -10,6 +10,7 @@ export default defineConfig({
   ],
 
   themeConfig: {
+    outline: 'deep',
     logo: '/logo.png',
     nav: [
       { text: 'Home', link: '/' },
@@ -125,6 +126,40 @@ export default defineConfig({
         ]
       },
       {
+        text: 'Part VIII — Building Microservices',
+        collapsed: false,
+        items: [
+          { text: 'Overview', link: '/part-8/intro' },
+          { text: 'Chapter 44: Intro to Microservices', link: '/part-8/ch44-introduction-to-microservices' },
+          { text: 'Chapter 45: Structuring Code', link: '/part-8/ch45-structuring-microservice-code' },
+          { text: 'Chapter 46: RESTful Services', link: '/part-8/ch46-restful-services' },
+          { text: 'Chapter 47: Reading & Writing JSON', link: '/part-8/ch47-restful-services-reading-and-writing-json' },
+          { text: 'Chapter 48: The Gorilla Framework', link: '/part-8/ch48-the-gorilla-framework' },
+          { text: 'Chapter 49: JSON Validation', link: '/part-8/ch49-json-validation' },
+          { text: 'Chapter 50: Swagger Documentation', link: '/part-8/ch50-documenting-restful-apis-with-swagger' },
+          { text: 'Chapter 51: Auto-Generating Clients', link: '/part-8/ch51-auto-generating-http-clients-from-swagger' },
+          { text: 'Chapter 52: CORS', link: '/part-8/ch52-cors-cross-origin-resource-sharing' },
+          { text: 'Chapter 53: Standard Lib Files', link: '/part-8/ch53-handling-files-with-the-go-standard-library' },
+          { text: 'Chapter 54: HTTP Multi-Part Requests', link: '/part-8/ch54-http-multi-part-requests' },
+          { text: 'Chapter 55: Gzip Compression', link: '/part-8/ch55-gzip-compression-for-http-responses' },
+          { text: 'Chapter 56: gRPC & Protocol Buffers', link: '/part-8/ch56-introduction-to-grpc-and-protocol-buffers' },
+          { text: 'Chapter 57: gRPC Client Connections', link: '/part-8/ch57-grpc-client-connections' },
+          { text: 'Chapter 58: Refactoring Codebase', link: '/part-8/ch58-refactoring-the-codebase' },
+          { text: 'Chapter 59: gRPC Streaming (Part 1)', link: '/part-8/ch59-grpc-bi-directional-streaming-part-1' },
+          { text: 'Chapter 60: gRPC Streaming (Part 2)', link: '/part-8/ch60-grpc-bi-directional-streaming-part-2' },
+          { text: 'Chapter 61: gRPC Error Messages', link: '/part-8/ch61-grpc-error-messages-in-unary-rpcs' },
+          { text: 'Chapter 62: gRPC Stream Error Handling', link: '/part-8/ch62-grpc-error-handling-in-bidirectional-streams' }
+        ]
+      },
+      {
+        text: 'Part IX — Go Build & Tooling',
+        collapsed: false,
+        items: [
+          { text: 'Overview', link: '/part-9/intro' },
+          { text: 'Chapter 63: Go Build, Compile & Package', link: '/part-9/ch63-go-build-compilation-and-packaging' }
+        ]
+      },
+      {
         text: 'Appendices',
         collapsed: false,
         items: [
@@ -136,7 +171,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Faithfully compiled from Matt Holiday\'s lecture transcriptions.',
+      message: 'Faithfully compiled from Matt Holiday\'s and Nic Jackson\'s lecture transcriptions.',
       copyright: 'Copyright © 2026-present'
     }
   }
